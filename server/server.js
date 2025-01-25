@@ -6,9 +6,12 @@ require('dotenv').config();
 app.get('/',(req,res)=>
 {
     res.json({
-        msg:"message sent "
+        msg:"message sen "
     })
 })
+app.use(express.json());
+app.use("/user",require("./routes/useRouter"))
+
 app.listen(PORT,()=>
 {
     console.log("listening");
